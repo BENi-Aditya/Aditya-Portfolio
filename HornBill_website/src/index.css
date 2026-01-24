@@ -1,0 +1,230 @@
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Horn-Bill Design System - Refined Dark Theme with Multiple Accents */
+
+@layer base {
+  :root {
+    /* Core dark theme - slightly lighter for better contrast */
+    --background: 240 8% 6%;
+    --foreground: 210 20% 92%;
+
+    /* Cards use glass effect */
+    --card: 240 8% 9%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 240 8% 9%;
+    --popover-foreground: 210 20% 92%;
+
+    /* Primary - Deep Crimson Red (less saturated) */
+    --primary: 354 65% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Cyan/Teal accent */
+    --secondary: 185 70% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted for subtle elements */
+    --muted: 240 6% 14%;
+    --muted-foreground: 210 15% 55%;
+
+    /* Accent - Emerald for success/nature */
+    --accent: 160 60% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Tertiary - Amber/Gold */
+    --tertiary: 38 75% 50%;
+    --tertiary-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 240 10% 18%;
+    --input: 240 6% 14%;
+    --ring: 354 65% 48%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for Horn-Bill */
+    --grid-color: 185 70% 45%;
+    --grid-opacity: 0.03;
+    --glass-blur: 20px;
+    --glass-bg: 240 8% 10% / 0.7;
+    --glass-border: 185 40% 30% / 0.15;
+    --glow-primary: 354 65% 48% / 0.2;
+    --glow-strong: 354 65% 48% / 0.4;
+    --glow-secondary: 185 70% 45% / 0.3;
+    --glow-accent: 160 60% 42% / 0.3;
+
+    /* Sidebar tokens */
+    --sidebar-background: 240 8% 5%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 354 65% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 6% 14%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 240 10% 18%;
+    --sidebar-ring: 354 65% 48%;
+  }
+
+  .dark {
+    /* Same as root - this is a dark-only design */
+    --background: 240 8% 6%;
+    --foreground: 210 20% 92%;
+    --card: 240 8% 9%;
+    --card-foreground: 210 20% 92%;
+    --popover: 240 8% 9%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 354 65% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 185 70% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 6% 14%;
+    --muted-foreground: 210 15% 55%;
+    --accent: 160 60% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 18%;
+    --input: 240 6% 14%;
+    --ring: 354 65% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto; /* Lenis handles smooth scroll */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--secondary) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--secondary) / 0.5);
+  }
+}
+
+@layer components {
+  /* Glass Panel Effect */
+  .glass-panel {
+    @apply relative overflow-hidden rounded-xl;
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: 
+      0 0 20px hsl(var(--glow-secondary)),
+      inset 0 1px 0 hsl(0 0% 100% / 0.03);
+  }
+
+  .glass-panel-strong {
+    @apply glass-panel;
+    box-shadow: 
+      0 0 30px hsl(var(--glow-secondary)),
+      0 0 60px hsl(var(--glow-primary)),
+      inset 0 1px 0 hsl(0 0% 100% / 0.05);
+  }
+
+  /* Monospace text for calculations */
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Technical label styling */
+  .tech-label {
+    @apply text-xs uppercase tracking-widest text-secondary mono;
+  }
+
+  /* Blueprint grid animation */
+  .blueprint-grid {
+    background-image: 
+      linear-gradient(hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--grid-color) / var(--grid-opacity)) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Glow effects */
+  .glow-red {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(var(--secondary) / 0.4);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.4);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  .glow-text-cyan {
+    text-shadow: 0 0 20px hsl(var(--secondary) / 0.5);
+  }
+
+  /* Vector arrow styling */
+  .vector-arrow {
+    stroke: hsl(var(--secondary));
+    stroke-width: 2;
+    fill: none;
+  }
+
+  /* Calculation highlight */
+  .calc-highlight {
+    @apply px-2 py-1 rounded bg-secondary/20 text-secondary mono;
+  }
+
+  /* Telemetry display */
+  .telemetry-value {
+    @apply text-2xl font-bold mono text-foreground;
+  }
+
+  .telemetry-unit {
+    @apply text-sm text-muted-foreground mono ml-1;
+  }
+
+  /* Social links */
+  .social-link {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-lg bg-muted/50 border border-border hover:border-secondary hover:bg-secondary/10 transition-all duration-300;
+  }
+
+  .social-link:hover svg {
+    @apply text-secondary;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent my-8;
+  }
+}
