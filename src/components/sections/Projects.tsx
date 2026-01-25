@@ -177,7 +177,7 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden" ref={ref}>
+    <section id="projects" className="py-20 md:py-24 relative overflow-hidden" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 grid-bg opacity-10" />
@@ -220,15 +220,15 @@ export function Projects() {
           {/* Navigation Arrows */}
           <button
             onClick={prevProject}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-20 p-3 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all"
+            className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-16 z-20 p-2 md:p-3 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           <button
             onClick={nextProject}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-20 p-3 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all"
+            className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-16 z-20 p-2 md:p-3 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           {/* Project Card */}
@@ -245,7 +245,7 @@ export function Projects() {
             >
               <div className="md:grid md:grid-cols-2">
                 {/* Image */}
-                <div className="relative h-[420px] md:h-auto overflow-hidden">
+                <div className="relative h-[260px] sm:h-[320px] md:h-auto overflow-hidden">
                   <motion.img
                     key={activeMedia ? `${activeProject.id}-${mediaIndex}` : activeProject.id}
                     src={toPublicAssetUrl(activeMedia ? activeMedia[mediaIndex] : activeProject.image)}
@@ -297,7 +297,7 @@ export function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="p-12">
+                <div className="p-6 sm:p-8 md:p-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -347,7 +347,7 @@ export function Projects() {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-4">
                       {activeProject.video && (
                         <Button variant="hero" size="sm" asChild>
                           <a href={activeProject.video} target="_blank" rel="noopener noreferrer">
@@ -406,20 +406,20 @@ export function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex justify-center gap-8 mt-12 text-center"
+          className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 mt-10 sm:mt-12 text-center"
         >
           <div>
             <div className="text-2xl font-bold font-mono text-primary">{projects.length}</div>
             <div className="text-xs text-muted-foreground uppercase tracking-wider">Projects</div>
           </div>
-          <div className="w-px bg-border" />
+          <div className="hidden sm:block w-px bg-border" />
           <div>
             <div className="text-2xl font-bold font-mono text-secondary">
               {projects.filter(p => p.category === "AI").length}
             </div>
             <div className="text-xs text-muted-foreground uppercase tracking-wider">AI Projects</div>
           </div>
-          <div className="w-px bg-border" />
+          <div className="hidden sm:block w-px bg-border" />
           <div>
             <div className="text-2xl font-bold font-mono text-primary">
               {projects.filter(p => p.featured).length}

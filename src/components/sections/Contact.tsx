@@ -15,7 +15,7 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="py-24 relative" ref={ref}>
+    <section id="contact" className="py-20 md:py-24 relative" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 grid-bg-dots opacity-20" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[150px]" />
@@ -37,7 +37,7 @@ export function Contact() {
           </p>
         </motion.div>
 
-        <div className="max-w-xl mx-auto flex flex-col items-center gap-8">
+        <div className="max-w-xl mx-auto flex flex-col items-center gap-6 sm:gap-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -45,7 +45,7 @@ export function Contact() {
             className="w-full space-y-6 text-center"
           >
             {/* Quick Actions */}
-            <div className="glass-card p-6">
+            <div className="glass-card p-5 sm:p-6">
               <h3 className="font-mono font-bold text-lg mb-4 flex items-center justify-center gap-2">
                 <Calendar className="w-5 h-5 text-primary" />
                 Quick Connect
@@ -74,7 +74,7 @@ export function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="glass-card p-6">
+            <div className="glass-card p-5 sm:p-6">
               <h3 className="font-mono font-bold text-lg mb-4">Find me online</h3>
               <div className="flex flex-wrap gap-3 justify-center">
                 {socialLinks.map((link) => (
@@ -83,7 +83,7 @@ export function Contact() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/50 text-muted-foreground ${link.color} transition-all hover:bg-muted`}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg bg-muted/50 text-muted-foreground ${link.color} transition-all hover:bg-muted w-full sm:w-auto justify-center`}
                   >
                     <link.icon className="w-4 h-4" />
                     <span className="text-sm font-medium">{link.name}</span>

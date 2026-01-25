@@ -117,7 +117,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-wrap items-stretch justify-center gap-6 mt-16 max-w-3xl mx-auto"
+            className="flex flex-wrap items-stretch justify-center gap-6 mt-12 sm:mt-16 max-w-3xl mx-auto"
           >
             {[
               { value: "10+", label: "Projects" },
@@ -126,7 +126,7 @@ export function Hero() {
             ].map((stat, i) => (
               <motion.div 
                 key={i} 
-                className="glass-card p-4 w-[220px]"
+                className="glass-card p-4 w-full sm:w-[220px]"
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >

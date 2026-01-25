@@ -63,7 +63,7 @@ export function Startups() {
   const nextStartupName = startups[nextStartupIndex].name;
 
   return (
-    <section id="startups" className="py-24 relative overflow-hidden" ref={ref}>
+    <section id="startups" className="py-20 md:py-24 relative overflow-hidden" ref={ref}>
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[200px]" />
@@ -96,12 +96,12 @@ export function Startups() {
         </motion.div>
 
         {/* Interactive Startup Selector */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
           {startups.map((startup, index) => (
             <motion.button
               key={startup.id}
               onClick={() => setActiveStartup(index)}
-              className={`px-6 py-3 rounded-full font-mono text-sm transition-all duration-300 ${
+              className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-mono text-sm transition-all duration-300 ${
                 activeStartup === index
                   ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
                   : "bg-card/50 text-muted-foreground hover:bg-card border border-border/50"
@@ -128,17 +128,17 @@ export function Startups() {
               type="button"
               onClick={() => setActiveStartup(prevStartupIndex)}
               aria-label="Previous project"
-              className="absolute left-[-84px] md:left-[-120px] top-1/2 -translate-y-1/2 z-40 p-4 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all shadow-lg"
+              className="absolute left-2 md:left-[-84px] lg:left-[-120px] top-1/2 -translate-y-1/2 z-40 p-3 md:p-4 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all shadow-lg"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button
               type="button"
               onClick={() => setActiveStartup(nextStartupIndex)}
               aria-label={`Next: ${nextStartupName}`}
-              className="absolute right-[-84px] md:right-[-120px] top-1/2 -translate-y-1/2 z-40 p-4 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all shadow-lg"
+              className="absolute right-2 md:right-[-84px] lg:right-[-120px] top-1/2 -translate-y-1/2 z-40 p-3 md:p-4 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all shadow-lg"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             <div className="glass-card overflow-hidden relative group">
@@ -150,7 +150,7 @@ export function Startups() {
               <div className="relative bg-card/90 rounded-xl overflow-hidden">
                 <div className="lg:grid lg:grid-cols-2 gap-0">
                   {/* Left - Visual Section */}
-                  <div className="relative p-8 lg:p-12 bg-gradient-to-br from-primary/10 to-secondary/5">
+                  <div className="relative p-6 sm:p-8 lg:p-12 bg-gradient-to-br from-primary/10 to-secondary/5">
                     {/* Floating Elements */}
                     <div className="absolute inset-0 overflow-hidden">
                       {[...Array(5)].map((_, i) => (
@@ -222,7 +222,7 @@ export function Startups() {
                   </div>
 
                   {/* Right - Content Section */}
-                  <div className="p-8 lg:p-12 flex flex-col justify-between">
+                  <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-between">
                     <div>
                       <p className="text-muted-foreground mb-8 leading-relaxed text-lg whitespace-pre-line">
                         {startups[activeStartup].description}
@@ -265,7 +265,7 @@ export function Startups() {
                     </div>
 
                     {/* CTAs */}
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                       <Button variant="hero" size="xl" asChild className="group mr-auto">
                         <a href={startups[activeStartup].website} target="_blank" rel="noopener noreferrer">
                           Visit {startups[activeStartup].name}

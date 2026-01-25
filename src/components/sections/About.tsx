@@ -14,12 +14,12 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 relative" ref={ref}>
+    <section id="about" className="py-20 md:py-24 relative" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 grid-bg-dots opacity-20" />
       
       <div className="container mx-auto px-4 md:px-6 relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
           {/* Left Column - Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

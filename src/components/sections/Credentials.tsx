@@ -8,7 +8,7 @@ export function Credentials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="credentials" className="py-24 relative" ref={ref}>
+    <section id="credentials" className="py-20 md:py-24 relative" ref={ref}>
       <div className="absolute inset-0 grid-bg-dots opacity-10" />
 
       <div className="container mx-auto px-4 md:px-6 relative">
@@ -24,12 +24,12 @@ export function Credentials() {
           </h2>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8">
+        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-6 md:gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="glass-card p-8"
+            className="glass-card p-6 sm:p-8"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 rounded-lg bg-primary/10 border border-primary/20">
@@ -50,7 +50,7 @@ export function Credentials() {
               <object
                 data="/certificates/defronix-certificate.pdf"
                 type="application/pdf"
-                className="w-full h-[420px]"
+                className="w-full h-64 sm:h-[420px]"
               />
             </div>
 
@@ -73,7 +73,7 @@ export function Credentials() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="glass-card p-8"
+            className="glass-card p-6 sm:p-8"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 rounded-lg bg-secondary/10 border border-secondary/20">
@@ -94,7 +94,7 @@ export function Credentials() {
               <img
                 src="/certificates/iit-madras-ai-ds.jpg"
                 alt="Introduction to AI and Data Science certificate"
-                className="w-full h-[420px] object-cover"
+                className="w-full h-64 sm:h-[420px] object-cover"
                 loading="lazy"
               />
             </div>
