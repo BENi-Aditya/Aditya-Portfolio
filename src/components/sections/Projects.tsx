@@ -68,18 +68,6 @@ const projects = [
     ],
   },
   {
-    id: "farmly",
-    title: "Farmly Automate",
-    tagline: "Smart irrigation automation system",
-    description: "IoT-based farm automation with soil sensors, weather integration, and automated water management for optimal crop health.",
-    category: "Robotics",
-    tags: ["IoT", "Arduino", "Sensors", "Dashboard"],
-    video: "https://youtu.be/hzM2Mhqll8w",
-    github: "https://github.com/BENi-Aditya/farmly",
-    featured: false,
-    image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&h=400&fit=crop",
-  },
-  {
     id: "resoil",
     title: "ReSoil / Yamuna",
     tagline: "River and soil restoration initiative",
@@ -103,6 +91,18 @@ const projects = [
       "/media/resoil-yamuna/5.JPG",
       "/media/resoil-yamuna/6.JPG",
     ],
+  },
+  {
+    id: "farmly",
+    title: "Farmly Automate",
+    tagline: "Smart irrigation automation system",
+    description: "IoT-based farm automation with soil sensors, weather integration, and automated water management for optimal crop health.",
+    category: "Robotics",
+    tags: ["IoT", "Arduino", "Sensors", "Dashboard"],
+    video: "https://youtu.be/hzM2Mhqll8w",
+    github: "https://github.com/BENi-Aditya/farmly",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&h=400&fit=crop",
   },
 ];
 
@@ -216,7 +216,7 @@ export function Projects() {
         </motion.div>
 
         {/* 3D Carousel */}
-        <div className="relative max-w-6xl mx-auto" style={{ perspective: "1000px" }}>
+        <div className="relative max-w-7xl mx-auto" style={{ perspective: "1000px" }}>
           {/* Navigation Arrows */}
           <button
             onClick={prevProject}
@@ -245,7 +245,7 @@ export function Projects() {
             >
               <div className="md:grid md:grid-cols-2">
                 {/* Image */}
-                <div className="relative h-80 md:h-auto overflow-hidden">
+                <div className="relative h-[420px] md:h-auto overflow-hidden">
                   <motion.img
                     key={activeMedia ? `${activeProject.id}-${mediaIndex}` : activeProject.id}
                     src={toPublicAssetUrl(activeMedia ? activeMedia[mediaIndex] : activeProject.image)}
@@ -255,7 +255,7 @@ export function Projects() {
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/80" />
+                  
                   
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
@@ -280,24 +280,24 @@ export function Projects() {
                         type="button"
                         onClick={prevMedia}
                         aria-label="Previous image"
-                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-1 text-muted-foreground hover:text-foreground transition-all"
                       >
-                        <ChevronLeft className="w-5 h-5" />
+                        <ChevronLeft className="w-7 h-7" />
                       </button>
                       <button
                         type="button"
                         onClick={nextMedia}
                         aria-label="Next image"
-                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-card/80 border border-border/50 text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-1 text-muted-foreground hover:text-foreground transition-all"
                       >
-                        <ChevronRight className="w-5 h-5" />
+                        <ChevronRight className="w-7 h-7" />
                       </button>
                     </>
                   )}
                 </div>
 
                 {/* Content */}
-                <div className="p-10">
+                <div className="p-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
