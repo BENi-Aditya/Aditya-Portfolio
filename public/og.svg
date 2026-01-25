@@ -1,0 +1,76 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050507" />
+      <stop offset="60%" stop-color="#0B0B10" />
+      <stop offset="100%" stop-color="#050507" />
+    </linearGradient>
+    <radialGradient id="redGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(330 160) rotate(18) scale(520 360)">
+      <stop stop-color="#F43F5E" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#050507" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="redGlow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(950 520) rotate(-20) scale(520 360)">
+      <stop stop-color="#FB7185" stop-opacity="0.38" />
+      <stop offset="1" stop-color="#050507" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="titleRed" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FEE2E2" />
+      <stop offset="50%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#BE123C" />
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#redGlow)" />
+  <rect width="1200" height="630" fill="url(#redGlow2)" />
+
+  <g opacity="0.24">
+    <circle cx="980" cy="110" r="80" stroke="#3F3F46" stroke-width="1" />
+    <circle cx="980" cy="110" r="130" stroke="#3F3F46" stroke-width="1" />
+    <circle cx="980" cy="110" r="180" stroke="#3F3F46" stroke-width="1" />
+  </g>
+
+  <g transform="translate(110 130)">
+    <rect x="0" y="0" width="210" height="40" rx="20" fill="rgba(244,63,94,0.14)" stroke="rgba(244,63,94,0.45)" />
+    <circle cx="22" cy="20" r="6" fill="#F43F5E" filter="url(#softGlow)" />
+    <text x="40" y="26" fill="#FEE2E2" font-family="JetBrains Mono, ui-monospace, SFMono-Regular" font-size="14" font-weight="600" letter-spacing="0.14em">
+      building("future")
+    </text>
+  </g>
+
+  <text x="110" y="280" fill="url(#titleRed)" font-family="Inter, ui-sans-serif, system-ui" font-size="76" font-weight="800" letter-spacing="-1.2" filter="url(#softGlow)">
+    Building tools I wish existed
+  </text>
+  <text x="110" y="360" fill="#F8FAFC" font-family="Inter, ui-sans-serif, system-ui" font-size="54" font-weight="700" letter-spacing="-0.8">
+    Aditya Tripathi
+  </text>
+
+  <text x="110" y="430" fill="#9CA3AF" font-family="JetBrains Mono, ui-monospace, SFMono-Regular" font-size="18" letter-spacing="0.18em">
+    AI • ROBOTICS • STARTUPS • PRODUCT SYSTEMS
+  </text>
+
+  <g opacity="0.8">
+    <circle cx="165" cy="510" r="3" fill="#F43F5E" />
+    <circle cx="240" cy="500" r="2" fill="#FB7185" />
+    <circle cx="330" cy="520" r="2" fill="#FCA5A5" />
+    <circle cx="520" cy="470" r="2" fill="#F43F5E" />
+    <circle cx="620" cy="510" r="2" fill="#FB7185" />
+    <circle cx="760" cy="480" r="3" fill="#F43F5E" />
+    <circle cx="900" cy="520" r="2" fill="#FCA5A5" />
+  </g>
+
+  <g opacity="0.55">
+    <circle cx="1120" cy="200" r="2" fill="#F43F5E" />
+    <circle cx="1040" cy="250" r="2" fill="#FB7185" />
+    <circle cx="100" cy="420" r="2" fill="#F43F5E" />
+    <circle cx="70" cy="260" r="2" fill="#FB7185" />
+    <circle cx="1140" cy="430" r="2" fill="#FCA5A5" />
+  </g>
+</svg>

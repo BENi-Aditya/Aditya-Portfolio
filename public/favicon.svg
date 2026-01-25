@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="core" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(32 32) scale(18)">
+      <stop offset="0%" stop-color="#FEE2E2" />
+      <stop offset="45%" stop-color="#F43F5E" />
+      <stop offset="100%" stop-color="#7F1D1D" />
+    </radialGradient>
+    <radialGradient id="pulse" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(32 32) scale(26)">
+      <stop offset="0%" stop-color="#F43F5E" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#F43F5E" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#05070F" />
+  <circle cx="32" cy="32" r="26" fill="url(#pulse)" />
+  <circle cx="32" cy="32" r="12" fill="url(#core)" />
+  <circle cx="32" cy="32" r="4" fill="#FFFFFF" fill-opacity="0.85" />
+</svg>

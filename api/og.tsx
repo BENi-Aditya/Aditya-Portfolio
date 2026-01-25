@@ -4,6 +4,6 @@ export const config = {
 
 export default function handler(req: Request) {
   const url = new URL(req.url);
-  const target = new URL("/og.png", url.origin);
+  const target = new URL("/og.svg", url.origin);
   return Response.redirect(target.toString(), 302);
 }
