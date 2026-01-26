@@ -109,6 +109,7 @@ const projects = [
 export function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isSectionInView = useInView(ref, { margin: "-100px" });
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [mediaIndex, setMediaIndex] = useState(0);
@@ -138,12 +139,13 @@ export function Projects() {
 
   useEffect(() => {
     if (!activeMedia || activeMedia.length <= 1) return;
+    if (!isSectionInView) return;
     const id = window.setInterval(() => {
       setMediaIndex((prev) => (prev + 1) % activeMedia.length);
     }, 4500);
 
     return () => window.clearInterval(id);
-  }, [activeProject.id, activeMedia]);
+  }, [activeProject.id, activeMedia, isSectionInView]);
 
   const nextMedia = () => {
     if (!activeMedia || activeMedia.length <= 1) return;
