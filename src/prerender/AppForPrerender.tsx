@@ -2,36 +2,28 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { Route, Routes } from "react-router-dom";
+import { StaticRouter } from "react-router-dom/server";
+import Index from "@/pages/Index";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Index />} />
-    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>
 );
 
-const AppProviders = ({ children }: { children: React.ReactNode }) => (
+export const AppForPrerender = ({ url }: { url: string }) => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {children}
+      <StaticRouter location={url}>
+        <AppRoutes />
+      </StaticRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
-
-const App = () => (
-  <AppProviders>
-    <BrowserRouter>
-      <AppRoutes />
-    </BrowserRouter>
-  </AppProviders>
-);
-
-export default App;
